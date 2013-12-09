@@ -1,1 +1,1 @@
-i
+module.exports = require('./lib/readfile');
