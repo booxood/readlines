@@ -1,0 +1,27 @@
+{
+  "name": "fileread",
+  "version": "0.0.1",
+  "description": "Read file by line",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/booxood/fileread.git"
+  },
+  "keywords": [
+    "read",
+    "file",
+    "readlines",
+    "random"
+  ],
+  "author": "liucw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/booxood/fileread/issues"
+  }
+}
