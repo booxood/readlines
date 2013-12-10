@@ -1,20 +1,23 @@
 'use strict'
+var path = require('path');
+
 var should = require('should');
 var fd = require('../index.js');
+
+var nullFilePath = path.join(__dirname, 'file/empty.txt');
+var fiveFilePath = path.join(__dirname, 'file/five.txt');
 
 describe('sync read file into array',function(){
     before(function(){
     });
 
     it('should return null array, read a empty file', function(){
-        var filePath = './file/empty.txt';
-        var lines = fd.readlinesSync(filePath);
+        var lines = fd.readlinesSync(nullFilePath);
         lines.should.be.an.instanceof(Array).and.have.lengthOf(0);
     });
 
     it('should return array of length equal 5, read five.txt', function(){
-        var filePath = './file/five.txt';
-        var lines = fd.readlinesSync(filePath);
+        var lines = fd.readlinesSync(fiveFilePath);
         lines.should.be.an.instanceof(Array).and.have.lengthOf(5);
         lines[4].should.equal('5');
     });
@@ -26,16 +29,14 @@ describe('async read file into array',function(){
     });
 
     it('should return null array, read a empty file', function(done){
-        var filePath = './file/empty.txt';
-        fd.readlines(filePath,function(err, lines){
+        fd.readlines(nullFilePath,function(err, lines){
             lines.should.be.an.instanceof(Array).and.have.lengthOf(0);
             done();
         });
     });
 
     it('should return array of length equal 5, read five.txt', function(done){
-        var filePath = './file/five.txt';
-        fd.readlines(filePath, function(err, lines){
+        fd.readlines(fiveFilePath, function(err, lines){
             lines.should.be.an.instanceof(Array).and.have.lengthOf(5);
             lines[4].should.equal('5');
             done();
