@@ -1,1 +1,1 @@
-aaa \n bbb \n ccc \r ddd
+aaa \n bbb \r\n ccc \r ddd
