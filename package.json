@@ -1,7 +1,7 @@
 {
-  "name": "fileread",
-  "version": "0.0.1",
-  "description": "Read file by line",
+  "name": "readlines",
+  "version": "0.0.6",
+  "description": "Read file line as array",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -24,17 +24,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/booxood/fileread.git"
+    "url": "http://github.com/booxood/readlines.git"
   },
   "keywords": [
-    "read",
-    "file",
+    "readfile",
     "readlines",
-    "random"
+    "readline"
   ],
   "author": "liucw",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/booxood/fileread/issues"
+    "url": "https://github.com/booxood/readlines/issues"
   }
 }
