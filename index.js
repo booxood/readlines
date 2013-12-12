@@ -1,1 +1,1 @@
-module.exports = require('./lib/readfile');
+module.exports = require('./lib/readlines');
