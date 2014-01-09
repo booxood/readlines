@@ -9,6 +9,10 @@ Read file line as array.
 
 ```
 npm install readlines
+
+or
+
+npm install -g readlines
 ```
 
 Example:
