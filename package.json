@@ -2,7 +2,10 @@
   "name": "readlines",
   "version": "0.0.6",
   "description": "Read file line as array",
-  "main": "index.js",
+  "main": "./index.js",
+  "bin": {
+      "readlines": "./bin/readlines"
+  },
   "directories": {
     "test": "test"
   },
@@ -13,8 +16,11 @@
       "pattern": "//^((?!(node_modules|test)).)*$/"
     },
     "travis-cov": {
-      "threshold": 60
+      "threshold": 80
     }
+  },
+  "dependencies": {
+      "commander": "*"
   },
   "devDependencies": {
     "mocha": "*",
