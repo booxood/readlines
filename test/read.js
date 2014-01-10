@@ -4,7 +4,7 @@ var path = require('path');
 var should = require('should');
 var fd = require('../index.js');
 
-var nullFilePath = path.join(__dirname, 'file/empty.txt');
+var emptyFilePath = path.join(__dirname, 'file/empty.txt');
 var fiveFilePath = path.join(__dirname, 'file/five.txt');
 var fiveWindowsFilePath = path.join(__dirname, 'file/five_windows.txt');
 var spFilePath = path.join(__dirname, 'file/sp.txt');
@@ -16,7 +16,7 @@ describe('sync case', function(){
         });
 
         it('should return null array, read a empty file', function(){
-            var lines = fd.readlinesSync(nullFilePath);
+            var lines = fd.readlinesSync(emptyFilePath);
             lines.should.be.an.instanceof(Array).and.have.lengthOf(0);
         });
 
@@ -45,9 +45,14 @@ describe('sync case', function(){
             line.should.equal('3');
         });
 
-        it('should return null, read the -1 line', function(){
+        it('should return \'\', read empty file', function(){
+            var line = fd.readlineSync(emptyFilePath, 1);
+            should.strictEqual('', line);
+        });
+
+        it('should return \'\', read the -1 line', function(){
             var line = fd.readlineSync(fiveFilePath, -1);
-            should.strictEqual(null, line);
+            should.strictEqual('', line);
         });
     });
 });
@@ -60,7 +65,7 @@ describe('async case', function(){
         });
 
         it('should return null array, read a empty file', function(done){
-            fd.readlines(nullFilePath, function(err, lines){
+            fd.readlines(emptyFilePath, function(err, lines){
                 lines.should.be.an.instanceof(Array).and.have.lengthOf(0);
                 done();
             });
@@ -84,11 +89,10 @@ describe('async case', function(){
             });
         });
 
-        it('should return null, read the 6 line', function(done){
+        it('should return \'\', read the 6 line', function(done){
             fd.readline(fiveFilePath, 6, function(err, line){
                 should.not.exist(err);
-                console.log(line);
-                should.strictEqual(null, line);
+                should.strictEqual('', line);
                 done();
             });
         });
