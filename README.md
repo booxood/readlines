@@ -9,7 +9,9 @@ Read file line as array.
 
 ```
 npm install readlines
+```
 or
+```
 npm install -g readlines
 ```
 
@@ -42,7 +44,7 @@ Sync read file by line return an array.
 ### readlineSync(filename, [options], lineNum)
 Sync read file by line return specific line.
 ```javascript
-  var line = fd.readlinSync(filePath, 3);
+  var line = fd.readlineSync(filePath, 3);
 ```
 
 ### readline(filename, [options], lineNum, callback)
