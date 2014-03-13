@@ -59,3 +59,7 @@ Sync read file by line return specific line.
 [The MIT License](https://github.com/booxood/readlines/blob/master/LICENSE)
 
   
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/booxood/readlines/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
