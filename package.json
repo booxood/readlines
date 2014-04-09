@@ -22,7 +22,7 @@
     }
   },
   "dependencies": {
-      "commander": "*"
+      "commander": "~2.1.0"
   },
   "devDependencies": {
     "mocha": "*",
