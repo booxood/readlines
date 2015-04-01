@@ -1,7 +1,8 @@
 # Readlines
 
 
-[![Build Status](https://travis-ci.org/booxood/readlines.png?branch=master)](https://travis-ci.org/booxood/readlines)
+[![Build Status](https://travis-ci.org/booxood/readlines.png?branch=master)](https://travis-ci.org/booxood/readlines)[![Coverage Status](https://coveralls.io/repos/booxood/readlines/badge.svg)](https://coveralls.io/r/booxood/readlines)
+
 
 Read file line as array.
 
