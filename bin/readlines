@@ -2,7 +2,7 @@
 
 var program = require('commander');
 var package = require('../package.json');
-var fd = require('../index.js');
+var rl = require('../index.js');
 
 function strToArr(val){
     return val.split(',').map(Number);
@@ -18,7 +18,7 @@ program
 if(program.all){
     program.args.forEach(function(file, index){
         console.log('>>>>' + file + '<<<<');
-        var lines = fd.readlinesSync(file);
+        var lines = rl.readlinesSync(file);
         lines.forEach(function(line, index){
             console.log((index+1) + '    ' + line);
         });
@@ -27,14 +27,14 @@ if(program.all){
     program.args.forEach(function(file, index){
         console.log('>>>>' + file + '<<<<');
         program.row.forEach(function(row, index){
-            var line = fd.readlineSync(file, row);
+            var line = rl.readlineSync(file, row);
             console.log(row + '    ' + line);
         });
     });
 }else{
     program.args.forEach(function(file, index){
         console.log('>>>>' + file + '<<<<');
-        var lines = fd.readlinesSync(file);
+        var lines = rl.readlinesSync(file);
         lines.forEach(function(line, index){
             console.log(line);
         });
