@@ -19,7 +19,8 @@
   "devDependencies": {
     "mocha": "*",
     "should": "*",
-    "istanbul": "*"
+    "istanbul": "*",
+    "jshint": "*"
   },
   "repository": {
     "type": "git",

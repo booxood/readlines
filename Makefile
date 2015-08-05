@@ -5,7 +5,7 @@ MOCHA_OPTS =
 install:
 	@npm install
 
-test: install
+test: install jshint
 	@NODE_ENV=test ./node_modules/mocha/bin/mocha \
 		--timeout $(TIMEOUT) \
 		$(MOCHA_OPTS) \
@@ -30,6 +30,9 @@ test-travis:
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
+jshint:
+	node_modules/.bin/jshint .
+
 test-all: test test-cov
 
-.PHONY: test test-cov test-travis test-all
+.PHONY: test test-cov test-travis jshint test-all
