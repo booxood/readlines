@@ -6,7 +6,7 @@
     <title>Readlines by booxood</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -29,14 +29,15 @@
       </header>
       <section>
         <h1>
-<a name="readlines" class="anchor" href="#readlines"><span class="octicon octicon-link"></span></a>Readlines</h1>
+<a id="readlines" class="anchor" href="#readlines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Readlines</h1>
 
-<p><a href="https://travis-ci.org/booxood/readlines"><img src="https://travis-ci.org/booxood/readlines.png?branch=master" alt="Build Status"></a></p>
+<p><a href="https://travis-ci.org/booxood/readlines"><img src="https://travis-ci.org/booxood/readlines.png?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/r/booxood/readlines"><img src="https://coveralls.io/repos/booxood/readlines/badge.svg" alt="Coverage Status"></a></p>
 
 <p>Read file line as array.</p>
 
 <h2>
-<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
 
 <pre><code>npm install readlines
 </code></pre>
@@ -48,54 +49,65 @@
 
 <p>Example:</p>
 
-<div class="highlight highlight-javascript"><pre>  <span class="kd">var</span> <span class="nx">fd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'readlines'</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">lines</span> <span class="o">=</span> <span class="nx">fd</span><span class="p">.</span><span class="nx">readlinesSync</span><span class="p">(</span><span class="s1">'example.txt'</span><span class="p">);</span>
-  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">line</span> <span class="k">in</span> <span class="nx">lines</span><span class="p">){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lines</span><span class="p">[</span><span class="nx">line</span><span class="p">]);</span>
-  <span class="p">};</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>  <span class="pl-k">var</span> rl <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>readlines<span class="pl-pds">'</span></span>);
+  <span class="pl-k">var</span> lines <span class="pl-k">=</span> rl.readlinesSync(<span class="pl-s"><span class="pl-pds">'</span>example.txt<span class="pl-pds">'</span></span>);
+  <span class="pl-k">for</span>(<span class="pl-k">var</span> line <span class="pl-k">in</span> lines){
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(lines[line]);
+  };</pre></div>
 
 <h2>
-<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
 
 <h3>
-<a name="readlinessyncfilename-options" class="anchor" href="#readlinessyncfilename-options"><span class="octicon octicon-link"></span></a>readlinesSync(filename, [options])</h3>
+<a id="readlinessyncfilename-options" class="anchor" href="#readlinessyncfilename-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>readlinesSync(filename, [options])</h3>
 
 <p>Sync read file by line return an array.</p>
 
-<div class="highlight highlight-javascript"><pre>  <span class="kd">var</span> <span class="nx">lines</span> <span class="o">=</span> <span class="nx">fd</span><span class="p">.</span><span class="nx">readlinesSync</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>  <span class="pl-k">var</span> lines <span class="pl-k">=</span> rl.readlinesSync(filePath);</pre></div>
 
 <h3>
-<a name="readlinesfilename-options-callback" class="anchor" href="#readlinesfilename-options-callback"><span class="octicon octicon-link"></span></a>readlines(filename, [options], callback)</h3>
+<a id="readlinesfilename-options-callback" class="anchor" href="#readlinesfilename-options-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>readlines(filename, [options], callback)</h3>
 
 <p><strong>Async</strong> read file by line return an array.</p>
 
-<div class="highlight highlight-javascript"><pre>  <span class="nx">fd</span><span class="p">.</span><span class="nx">readlines</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">lines</span><span class="p">){</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lines</span><span class="p">);</span>
-  <span class="p">});</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>  rl.readlines(filePath, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">lines</span>){
+      <span class="pl-en">console</span><span class="pl-c1">.log</span>(lines);
+  });</pre></div>
 
 <h3>
-<a name="readlinesyncfilename-options-linenum" class="anchor" href="#readlinesyncfilename-options-linenum"><span class="octicon octicon-link"></span></a>readlineSync(filename, [options], lineNum)</h3>
+<a id="readlinesyncfilename-options-linenum" class="anchor" href="#readlinesyncfilename-options-linenum" aria-hidden="true"><span class="octicon octicon-link"></span></a>readlineSync(filename, [options], lineNum)</h3>
 
 <p>Sync read file by line return specific line.</p>
 
-<div class="highlight highlight-javascript"><pre>  <span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">fd</span><span class="p">.</span><span class="nx">readlineSync</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>  <span class="pl-k">var</span> line <span class="pl-k">=</span> rl.readlineSync(filePath, <span class="pl-c1">3</span>);</pre></div>
 
 <h3>
-<a name="readlinefilename-options-linenum-callback" class="anchor" href="#readlinefilename-options-linenum-callback"><span class="octicon octicon-link"></span></a>readline(filename, [options], lineNum, callback)</h3>
+<a id="readlinefilename-options-linenum-callback" class="anchor" href="#readlinefilename-options-linenum-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>readline(filename, [options], lineNum, callback)</h3>
 
 <p><strong>Async</strong> read file by line return specific line.</p>
 
-<div class="highlight highlight-javascript"><pre>  <span class="nx">fd</span><span class="p">.</span><span class="nx">readline</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">line</span><span class="p">){</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">line</span><span class="p">);</span>
-  <span class="p">});</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>  rl.readline(filePath, <span class="pl-c1">3</span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">line</span>){
+      <span class="pl-en">console</span><span class="pl-c1">.log</span>(line);
+  });</pre></div>
+
+<h3>
+<a id="readlinesstream" class="anchor" href="#readlinesstream" aria-hidden="true"><span class="octicon octicon-link"></span></a>readlinesStream()</h3>
+
+<p>Read by line as stream.</p>
+
+<div class="highlight highlight-javascript"><pre>  <span class="pl-k">var</span> liner <span class="pl-k">=</span> rl.readlinesStream();
+
+  fs.createReadStream(filePath)
+      .pipe(liner)
+      .on(<span class="pl-s"><span class="pl-pds">'</span>readable<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+          <span class="pl-k">var</span> line;
+          <span class="pl-k">while</span> (line <span class="pl-k">=</span> liner.read()) {
+              <span class="pl-en">console</span><span class="pl-c1">.log</span>(line);
+          }
+      });</pre></div>
 
 <h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p><a href="https://github.com/booxood/readlines/blob/master/LICENSE">The MIT License</a></p>
 
