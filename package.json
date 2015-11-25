@@ -4,7 +4,7 @@
   "description": "Read file line as array",
   "main": "./index.js",
   "bin": {
-      "readlines": "./bin/readlines"
+    "readlines": "./bin/readlines"
   },
   "directories": {
     "test": "test"
@@ -14,12 +14,12 @@
     "test": "make test-all"
   },
   "dependencies": {
-      "commander": "~2.1.0"
+    "commander": "~2.1.0"
   },
   "devDependencies": {
     "mocha": "*",
     "should": "*",
-    "istanbul": "*",
+    "istanbul": "0.4.1",
     "jshint": "*"
   },
   "repository": {
