@@ -26,10 +26,6 @@
     "type": "git",
     "url": "http://github.com/booxood/readlines.git"
   },
-  "engines": {
-    "node": ">= 0.10.36",
-    "iojs": ">= 1.0.0"
-  },
   "keywords": [
     "readfile",
     "readlines",

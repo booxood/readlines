@@ -1,5 +1,6 @@
 'use strict'
 var path = require('path');
+var os = require('os');
 
 var should = require('should');
 var rl = require('../index.js');
@@ -9,6 +10,8 @@ var fiveFilePath = path.join(__dirname, 'file/five.txt');
 var fiveWindowsFilePath = path.join(__dirname, 'file/five_windows.txt');
 var spFilePath = path.join(__dirname, 'file/sp.txt');
 var errorPath = 'file/error';
+
+var filePath = os.platform() === 'win32' ? fiveWindowsFilePath : fiveFilePath;
 
 describe('sync case.', function() {
 
@@ -20,14 +23,8 @@ describe('sync case.', function() {
             lines.should.be.an.instanceof(Array).and.have.lengthOf(0);
         });
 
-        it('should return array of length equal 5, read five.txt', function() {
-            var lines = rl.readlinesSync(fiveFilePath);
-            lines.should.be.an.instanceof(Array).and.have.lengthOf(5);
-            lines[4].should.equal('5');
-        });
-
-        it('should return array of length equal 5, read five_windows.txt', function() {
-            var lines = rl.readlinesSync(fiveWindowsFilePath);
+        it('should return array of length equal 5', function() {
+            var lines = rl.readlinesSync(filePath);
             lines.should.be.an.instanceof(Array).and.have.lengthOf(5);
             lines[4].should.equal('5');
         });
@@ -40,7 +37,7 @@ describe('sync case.', function() {
 
     describe('sync read a line', function() {
         it('should return 3, read the 3 line', function() {
-            var line = rl.readlineSync(fiveFilePath, 3);
+            var line = rl.readlineSync(filePath, 3);
             line.should.equal('3');
         });
 
@@ -50,7 +47,7 @@ describe('sync case.', function() {
         });
 
         it('should return \'\', read the -1 line', function() {
-            var line = rl.readlineSync(fiveFilePath, -1);
+            var line = rl.readlineSync(filePath, -1);
             should.strictEqual('', line);
         });
     });
@@ -71,7 +68,7 @@ describe('async case.', function() {
         });
 
         it('should return array of length equal 5, read five.txt', function(done) {
-            rl.readlines(fiveFilePath, function(err, lines) {
+            rl.readlines(filePath, function(err, lines) {
                 lines.should.be.an.instanceof(Array).and.have.lengthOf(5);
                 lines[0].should.equal('1');
                 lines[4].should.equal('5');
@@ -89,7 +86,7 @@ describe('async case.', function() {
 
     describe('async read a line', function() {
         it('should return 3, read the 3 line', function(done) {
-            rl.readline(fiveFilePath, 3, function(err, line) {
+            rl.readline(filePath, 3, function(err, line) {
                 should.not.exist(err);
                 line.should.equal('3');
                 done();
@@ -97,7 +94,7 @@ describe('async case.', function() {
         });
 
         it('should return \'\', read the 6 line', function(done) {
-            rl.readline(fiveFilePath, 6, function(err, line) {
+            rl.readline(filePath, 6, function(err, line) {
                 should.not.exist(err);
                 should.strictEqual('', line);
                 done();
