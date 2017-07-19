@@ -14,12 +14,12 @@
     "test": "make test-all"
   },
   "dependencies": {
-    "commander": "~2.1.0"
+    "commander": "~2.11.0"
   },
   "devDependencies": {
     "mocha": "*",
     "should": "11.2.1",
-    "istanbul": "0.4.4",
+    "istanbul": "0.4.5",
     "jshint": "*"
   },
   "repository": {
