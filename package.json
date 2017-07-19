@@ -17,7 +17,7 @@
     "commander": "~2.1.0"
   },
   "devDependencies": {
-    "mocha": "*",
+    "mocha": "3.4.0",
     "should": "11.2.1",
     "istanbul": "0.4.4",
     "jshint": "*"
