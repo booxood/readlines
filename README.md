@@ -1,6 +1,6 @@
 # Readlines
 
-
+[![Greenkeeper badge](https://badges.greenkeeper.io/booxood/readlines.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/booxood/readlines.svg?branch=master)](https://travis-ci.org/booxood/readlines)
 [![Build status](https://ci.appveyor.com/api/projects/status/yqd24wlgmqslv9rq/branch/master?svg=true)](https://ci.appveyor.com/project/booxood/readlines)
 [![Coverage Status](https://coveralls.io/repos/booxood/readlines/badge.svg)](https://coveralls.io/r/booxood/readlines)
